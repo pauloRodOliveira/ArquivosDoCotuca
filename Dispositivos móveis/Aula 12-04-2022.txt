@@ -1,0 +1,19 @@
+ANDROID STUDIO:
+
+# ALGUMAS FERRAMENTAS:
+  - Ancoragem: serve para ancorar um elemento em um vértice da tela, 
+    quando a tela ficar na horizontal, o elemento vai continuar na 
+    mesma posição;
+  - DotPoint (dp): unidade de medida;
+  - Wired frame: é como um raio-X da tela, serve para identificar melhor
+    os itens que estão sobrepostos;
+  - findViewById(R.id.txt1): é uma função que retorna um elemento da tela (view).
+    R = recurso, id = identificação do elemento, txt1 = nome do id;
+  * exemplo: texto = findViewById(R.id.txt1); //agora a variável texto está recebendo o elemento da view
+             texto.setText("Olá mundo!");
+  - Button: criar um atributo dentro da MainActivity  => private Button button.
+    depois fazer ele receber o button da view => this.button = (Button) findViewById(R.id.button);
+            
+
+
+# MAIN ACTIVITY:

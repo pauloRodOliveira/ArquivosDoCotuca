@@ -1,0 +1,38 @@
+PROCESSOS DA QUALIDADE: planejamento, gerenciamento e controle.
+
+# EFICÁCIA: fazer direito, atingir os objetivos;
+
+# EFICIÊNCIA: fazer mais rápido, com menos recursos e ou mais barato;
+
+# EFETIVIDADE: fazer com eficácia e eficiência
+
+# GERENCIAR:
+ - BENEFÍCIOS: aumentar a probabilidade de cumprir os objetivos da qualidade 
+   e identificar processos ineficazes e causas de má qualidade;
+ - TRABALHO DE TODOS;
+ - Garantir que o planejamento da qualidade está sendo seguido, analisando as tarefas ineficazes
+   e etc.
+ - FERRAMENTAS:
+    1: Coleta de dados: check-lists, etc
+    2: Análise de Dados: Análise de alternativas, Análise de processos, Análise de causa-raiz(RCA)
+    3: Tomada de decisões
+    4: Representação de dados: diagrama causa e efeito, fluxograma, histogramas, diagramas de dispersão
+    5: Auditoria: quando uma equipe ou algum profissional, que não está dentro do projeto, analisa
+       a qualidade do projeto.
+
+# CONTROLAR:
+ - É o processo de monitorar e analisar os resultados da execução das atividades de gerenciamento da qualidade 
+ para avaliar desempenho e garantir que as saídas do projeto sejam completas, para que as expectatvias do cliente
+ sejam atendidas;
+ - BENEFÍCIOS: verificar as entregas dos trabalhos;
+ - FERRAMENTAS:
+    1:Lista de verificação;
+    2: Folhas de verificação (ou de resultado): fáceis de manipular/anotar;
+    3: Amostragem estatística: escolha de uma parte da população com o interesse de realizar uma
+       inspeção;
+    4: Questionários de pesquisas;
+    5: Análise de dados;
+    6: Inspeção;
+    7: Teste/avaliações de produtos;
+ 
+

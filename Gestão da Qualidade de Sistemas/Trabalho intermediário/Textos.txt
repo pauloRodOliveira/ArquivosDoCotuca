@@ -1,0 +1,25 @@
+# O que é o Diagrama de Ishikawa e qual a sua função?
+
+  - Todos problemas, que afetam a qualidade de um produto, tem seus motivos por terem ocorridos, suas causas. O Diagrama de Ishikawa é uma ferramenta gráfica
+  que tem como objetivo encontrar essas causas, e assim auxiliar nas análises destes problemas. Outros nomes para este Diagrama é:
+
+    1 - Diagrama da Espinha de Peixe;
+    2 - Diagrama Cause e Efeito;
+    3 - PDCA Espinha de Peixe;
+    4 - Árvore de Causas;
+    5 - Diagrama dos 6Ms. 
+
+
+
+# Origem:
+
+  - Esta ferramenta foi criada pelo engenheiro químico Kaoru Ishikawa, em 1943. Seu objetivo era desenvolver uma ferramenta que pudesse
+  ser utilizada e compreendida por qualquer pessoa dentro da organização. Por este motivo, o Diagrama de Ishikawa auxillia no raciocínio da equipe, para chegar
+  nas causas-raíz que diminuem a sua produtividade.
+
+# Em quais situações utilizá-lo?
+  
+  - Esta ferramenta pode ser utilizada por todas organizações e todos setores, podendo ser adaptado para cada situação. 
+  O ideal é que este diagrama seja aplicado para problemas que estejam relacionados diretamente com o produto. Apesar disso ele
+  também pode auxiliar a encontrar dificuldades, que não são um problema de fato, mas diminuem a produtividade. Ele também não é o ideal
+  para a prevenção de falhas ou erros, e sim para encontrar suas causas.

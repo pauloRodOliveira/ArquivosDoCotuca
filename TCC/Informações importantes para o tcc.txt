@@ -1,0 +1,9 @@
+- Qual o foco? 
+- Pesquisas bibliográficas
+- Quais as vantagens?
+- Qual o problema?
+- Diagrama de caso de uso
+- Fazer um mer (para dados)
+- Usar o figma
+- Como tornar intuitivo para o usuário (professores resistentes ao uso de programas e aplicativos para estas situações)?
+- suzy

@@ -1,0 +1,39 @@
+Textos para a apresentação
+
+#O que é o Diagrama de Ishikawa?
+
+	Para começar vamos falar o que é o diagrama de ishikawa. Bom, ele é uma ferramenta para analisar os problemas 
+de qualidades e suas causas de maneira bem simples.
+
+#Outros nomes para o Diagrama de Ishikawa:
+
+	- Diagrama de Causa e Efeito
+	- PDCA Espinha de Peixe
+	- Árvore de Causas
+	- Diagrama da Espinha de Peixe
+	- Diagrama dos 6Ms
+
+ Reparem no nome PDCA Espinha de Peixe, ele tem esse outro nome devido a sua possível implementação com o ciclo PDCA,
+ele pode ser implementado logo no início, no planning, para assim facilitar na identificação do problema, das metas 
+e do plano de ação
+
+#Origem do da ferramenta
+
+	O criador dela foi o Kaoru Ishikawa, que também criou o círculo de controle de qualidade, que são reuniões com o objetivo
+de discutir sobre a qualidade dos produtos e serviços da empresa. O objetivo de Ishikawa, era construir uma ferramenta capaz de resolver
+os problemas de qualidade, analisando suas causas e entendendo como elas impulsionaram esse problema, além disso, ele queria uma fácil compreensão para todos
+os envolvidos do departamento que o utiliza.
+
+#Como montar o Diagrama de Ishikawa
+
+	Agora vou mostrar como o diagrama de ishikawa pode ser feito, para cumprir a função de ser simples e claro, é necessário de uma grande atenção na hora
+de fazê-lo, para que ele possa abranger todas as causas relacionadas aquele problema. Enfim, o primeiro passo é definir o problema que será analisado, que será chamado
+de efeito dentro do diagrama, por isso o nome causa e efeito. Depois montar a espinha de peixe, que está no próximo slide. O segundo passo é fazer um brainstorm das possíveis
+causas do problema, após isto, fazer a categorização dos problemas seguindo a regra dos 6Ms, por fim, o último passo é analisar o efeito e suas causas em conjunto, é indicado
+ter o auxílio de uma equipe multidisciplinar para esta parte, por exemplo, soluções que o pessoal do back end, talvez, não teria o mesmo pensamento que o pessoal do front end.
+
+#Diagrama e exemplo
+
+	Aqui está o diagrama com as suas respetivas categorias, um exemplo que podemos dar para o problema: produto com defeito, pode ser um problema nas máquinas na falta de manutenção ou equipamentos obsoletos,
+pode ser na mão de obra, a falta de treinamento, ou conversas paralelas, nos métodos, jornada de trabalho excessiva ou falta de controle da qualidade e também pode ser problemas em materiais, como matéria prima de má
+qualidade ou desgaste em algum parafuso.

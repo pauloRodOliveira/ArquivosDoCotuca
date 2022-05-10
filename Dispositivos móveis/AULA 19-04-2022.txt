@@ -1,0 +1,11 @@
+Métodos de manipulação de botoões
+
+1- pelo onClick
+
+# O que é uma intent?
+
+Intent é uma nova janela, a intençao de uma nova janela
+
+O que a Intent pode disparar?
+Iniciar uma nova Activity
+

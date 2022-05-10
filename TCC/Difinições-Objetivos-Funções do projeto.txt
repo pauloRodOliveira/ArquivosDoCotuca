@@ -1,0 +1,8 @@
+#Definições do projeto:
+	- criação de um aplicativo que auxilia na postagem, correção e análise de provas de matemática do 3º ano do Ensino médio
+
+#Objetivos: 
+	- Produzir um app que aumente a compreensão do professor com o aluno em relação às suas dificuldades.
+	- Mostrar com a maior precisão possível a dificuldade do aluno.	
+
+#Funções do APP: 
