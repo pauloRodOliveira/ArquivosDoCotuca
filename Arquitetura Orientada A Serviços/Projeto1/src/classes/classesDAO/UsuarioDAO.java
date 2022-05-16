@@ -2,9 +2,9 @@ package classes.classesDAO;
 
 import classes.bd.ConexaoBD;
 import classes.classesDBO.UsuarioDBO;
-import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,9 +64,9 @@ public class UsuarioDAO {
     }
 
     //metodo read
-    public List<UsuarioDBO> getCliente() {
+    public List<UsuarioDBO> getUsuarios() {
 
-        String sql = "SELECT * FROM cliente";
+        String sql = "SELECT * FROM usuarios";
 
         List<UsuarioDBO> usuarios = new ArrayList<UsuarioDBO>();
 

@@ -57,6 +57,8 @@ public class UsuarioDBO {
         this.complemento = complemento;
     }
 
-
+    public String toString(){
+        return id + " " + nome + " " + idade + " " + cep + " " + numeroCasa + " " + complemento;
+    }
 }
 
