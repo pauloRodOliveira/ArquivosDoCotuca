@@ -227,38 +227,4 @@ public class Logradouro {
 
         return ret;
     }
-
-    // MEUS ATRIBUTOS
-
-//    private String nome;
-//    private String idade;
-//    private String numeroCasa;
-//
-//    public String getNome() {
-//        return nome;
-//    }
-//
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
-//
-//    public String getIdade() {
-//        return idade;
-//    }
-//
-//    public void setIdade(String idade) {
-//        this.idade = idade;
-//    }
-//
-//    public String getNumeroCasa() {
-//        return numeroCasa;
-//    }
-//
-//    public void setNumeroCasa(String numeroCasa) {
-//        this.numeroCasa = numeroCasa;
-//    }
-
-
-
-
 }

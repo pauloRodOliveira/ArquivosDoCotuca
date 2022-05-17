@@ -31,8 +31,6 @@ public class UsuarioWS
                     (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(15000);
-            //connection.setRequestProperty("login", "seulogin");
-            //connection.setRequestProperty("password", "suasenha");
             connection.connect();
 
             String responseJson = inputStreamToString(connection.getInputStream());
@@ -65,8 +63,6 @@ public class UsuarioWS
             connection.setDoOutput(true);
             connection.setUseCaches(false);
             connection.setConnectTimeout(15000);
-            //connection.setRequestProperty("login", "seulogin");
-            //connection.setRequestProperty("senha", "suasenha");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Length", Integer.toString(requestJson.length()));

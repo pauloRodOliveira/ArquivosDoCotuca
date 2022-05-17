@@ -10,16 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioDAO {
-
-    // C create - ok
-    // R read - ok
-    // U update - ok
-    // D delete - ok
-
     //metodo create
-    public void save(UsuarioDBO usuario) {
+    public void insertUser(UsuarioDBO usuario) {
 
-        String sql = "INSERT INTO usuarios(nome, idade, cep, numerocasa, complemento) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO usuarios(nome, cep, numcasa, complemento) VALUES (?, ?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -34,10 +28,54 @@ public class UsuarioDAO {
             //adicionando os valores que sao esperados pela query
 
             pstm.setString(1, usuario.getNome());
-            pstm.setInt(2, usuario.getIdade());
-            pstm.setString(3, usuario.getCep());
-            pstm.setInt(4, usuario.getNumeroCasa());
-            pstm.setString(5, usuario.getComplemento());
+            pstm.setString(2, usuario.getCep());
+            pstm.setInt(3, usuario.getNumCasa());
+            pstm.setString(4, usuario.getComplemento());
+
+            //Executar a query
+
+            pstm.execute();
+            System.out.println("DADOS SALVOS COM SUCESSO");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally {
+            //fechar as conexões
+            try {
+                if (pstm != null) {
+                    pstm.close();
+                }
+
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    static public void insert(UsuarioDBO usuario) {
+
+        String sql = "INSERT INTO usuarios(nome, cep, numcasa, complemento) VALUES (?, ?, ?, ?)";
+
+        Connection conn = null;
+        PreparedStatement pstm = null;
+
+        try {
+            //criar uma conexão com o banco de dados
+            conn = ConexaoBD.createConnecticonToMySQL();
+
+            //criamos uma PreparedStatement para executar uma QUERY
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+
+            //adicionando os valores que sao esperados pela query
+
+            pstm.setString(1, usuario.getNome());
+            pstm.setString(2, usuario.getCep());
+            pstm.setInt(3, usuario.getNumCasa());
+            pstm.setString(4, usuario.getComplemento());
 
             //Executar a query
 
@@ -91,14 +129,11 @@ public class UsuarioDAO {
                 //Recuperar o nome
                 usuario.setNome(rset.getString("nome"));
 
-                //Recuperar a idade
-                usuario.setIdade(rset.getInt("idade"));
-
                 //Recuperar o cep
                 usuario.setCep(rset.getString("cep"));
 
                 //recuperar numeroCasa
-                usuario.setNumeroCasa(rset.getInt("numeroCasa"));
+                usuario.setNumCasa(rset.getInt("numCasa"));
 
                 //recuperar complemento
                 usuario.setComplemento(rset.getString("complemento"));
@@ -128,10 +163,9 @@ public class UsuarioDAO {
         return usuarios;
     }
 
-    //metodo update
     public void update(UsuarioDBO usuario) {
 
-        String sql = "UPDATE usuarios SET nome = ?, idade = ?, cep = ?, numerocasa = ?, complemento = ? " +
+        String sql = "UPDATE usuarios SET nome = ?, cep = ?, numcasa = ?, complemento = ? " +
                 "WHERE id = ?";
 
         Connection conn = null;
@@ -148,13 +182,12 @@ public class UsuarioDAO {
             //Adicionar os valores para atualizar
 
             pstm.setString(1, usuario.getNome());
-            pstm.setInt(2, usuario.getIdade());
-            pstm.setString(3, usuario.getCep());
-            pstm.setInt(4, usuario.getNumeroCasa());
-            pstm.setString(5, usuario.getComplemento());
+            pstm.setString(2, usuario.getCep());
+            pstm.setInt(3, usuario.getNumCasa());
+            pstm.setString(4, usuario.getComplemento());
 
             //Qual o ID do registro que deseja atualizar?
-            pstm.setInt(6, usuario.getId());
+            pstm.setInt(5, usuario.getId());
 
 
             //executar a query

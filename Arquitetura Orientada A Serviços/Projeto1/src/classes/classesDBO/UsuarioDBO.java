@@ -4,9 +4,8 @@ public class UsuarioDBO {
 
     private int id;
     private String nome;
-    private int idade;
     private String cep;
-    private int numeroCasa;
+    private int numCasa;
     private String complemento;
 
     public int getId() {
@@ -25,14 +24,6 @@ public class UsuarioDBO {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
     public String getCep() {
         return cep;
     }
@@ -41,12 +32,12 @@ public class UsuarioDBO {
         this.cep = cep;
     }
 
-    public int getNumeroCasa() {
-        return numeroCasa;
+    public int getNumCasa() {
+        return numCasa;
     }
 
-    public void setNumeroCasa(int numeroCasa) {
-        this.numeroCasa = numeroCasa;
+    public void setNumCasa(int numCasa) {
+        this.numCasa = numCasa;
     }
 
     public String getComplemento() {
@@ -58,7 +49,7 @@ public class UsuarioDBO {
     }
 
     public String toString(){
-        return id + " " + nome + " " + idade + " " + cep + " " + numeroCasa + " " + complemento;
+        return id + " " + nome + " " + cep + " " + numCasa + " " + complemento;
     }
 }
 
