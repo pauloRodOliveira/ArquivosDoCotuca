@@ -16,17 +16,5 @@ public class ConexaoBD {
 
         return connection;
     }
-
-    public static void main(String[] args) throws Exception {
-        Connection con = createConnecticonToMySQL(); //recuperar uma conexão com o banco de dados se tiver
-
-        //testar se a conexão é nula
-        if (con != null) {
-            System.out.println("Conectado ao banco de dados!");
-            con.close();
-        }
-    }
-
-
 }
 

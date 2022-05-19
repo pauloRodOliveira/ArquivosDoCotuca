@@ -1,13 +1,12 @@
 package com.company;
 
+import classes.Logradouro;
+import classes.UsuarioWS;
 import classes.classesDAO.UsuarioDAO;
 import classes.classesDBO.UsuarioDBO;
 
 public class teste {
     public static void main(String[] args) {
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        for(UsuarioDBO usuario : usuarioDAO.getUsuarios()){
-            System.out.println(usuario);
-        }
+        System.out.println(UsuarioDAO.getUser("Paulo"));
     }
 }

@@ -10,45 +10,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioDAO {
-    //metodo create
-    public void insertUser(UsuarioDBO usuario) {
+    //Método para inserir usuario
+    static public void insertUser(UsuarioDBO usuario) {
 
         String sql = "INSERT INTO usuarios(nome, cep, numcasa, complemento) VALUES (?, ?, ?, ?)";
 
-        Connection conn = null;
-        PreparedStatement pstm = null;
+        Connection conexao = null;
+        PreparedStatement preparedStatement = null;
 
         try {
-            //criar uma conexão com o banco de dados
-            conn = ConexaoBD.createConnecticonToMySQL();
+            //Cria a conexão com o bd
+            conexao = ConexaoBD.createConnecticonToMySQL();
 
-            //criamos uma PreparedStatement para executar uma QUERY
-            pstm = (PreparedStatement) conn.prepareStatement(sql);
+            //Cria o PreparedStatement de acordo com a consulta SQL para executar a query
+            preparedStatement = conexao.prepareStatement(sql);
 
-            //adicionando os valores que sao esperados pela query
+            //Adiciona os valores pedidos pela consulta no preparedStatement
+            preparedStatement.setString(1, usuario.getNome());
+            preparedStatement.setString(2, usuario.getCep());
+            preparedStatement.setInt(3, usuario.getNumCasa());
+            preparedStatement.setString(4, usuario.getComplemento());
 
-            pstm.setString(1, usuario.getNome());
-            pstm.setString(2, usuario.getCep());
-            pstm.setInt(3, usuario.getNumCasa());
-            pstm.setString(4, usuario.getComplemento());
-
-            //Executar a query
-
-            pstm.execute();
-            System.out.println("DADOS SALVOS COM SUCESSO");
-
+            //Executa uma query
+            preparedStatement.execute();
+            System.out.println("Usuario cadastrado!");
         } catch (Exception e) {
             e.printStackTrace();
 
         } finally {
-            //fechar as conexões
+            //Fechando as conexoes
             try {
-                if (pstm != null) {
-                    pstm.close();
+                if (preparedStatement != null) {
+                    preparedStatement.close();
                 }
 
-                if (conn != null) {
-                    conn.close();
+                if (conexao != null) {
+                    conexao.close();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -56,87 +53,42 @@ public class UsuarioDAO {
         }
     }
 
-    static public void insert(UsuarioDBO usuario) {
-
-        String sql = "INSERT INTO usuarios(nome, cep, numcasa, complemento) VALUES (?, ?, ?, ?)";
-
-        Connection conn = null;
-        PreparedStatement pstm = null;
-
-        try {
-            //criar uma conexão com o banco de dados
-            conn = ConexaoBD.createConnecticonToMySQL();
-
-            //criamos uma PreparedStatement para executar uma QUERY
-            pstm = (PreparedStatement) conn.prepareStatement(sql);
-
-            //adicionando os valores que sao esperados pela query
-
-            pstm.setString(1, usuario.getNome());
-            pstm.setString(2, usuario.getCep());
-            pstm.setInt(3, usuario.getNumCasa());
-            pstm.setString(4, usuario.getComplemento());
-
-            //Executar a query
-
-            pstm.execute();
-            System.out.println("DADOS SALVOS COM SUCESSO");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-
-        } finally {
-            //fechar as conexões
-            try {
-                if (pstm != null) {
-                    pstm.close();
-                }
-
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    //metodo read
-    public List<UsuarioDBO> getUsuarios() {
+    //Método para consultar todos os usuarios cadastrados
+    public List<UsuarioDBO> getUser() {
 
         String sql = "SELECT * FROM usuarios";
 
         List<UsuarioDBO> usuarios = new ArrayList<UsuarioDBO>();
 
-        Connection conn = null;
-        PreparedStatement pstm = null;
+        Connection conexao = null;
+        PreparedStatement preparedStatement = null;
         //Classe que vai recuperar os dados do banco de dados
-        ResultSet rset = null;
+        ResultSet resultSet = null;
 
         try {
-            conn = ConexaoBD.createConnecticonToMySQL();
+            conexao = ConexaoBD.createConnecticonToMySQL();
 
-            pstm = (PreparedStatement) conn.prepareStatement(sql);
+            preparedStatement = conexao.prepareStatement(sql);
 
-            rset = pstm.executeQuery();
+            resultSet = preparedStatement.executeQuery();
 
-            while (rset.next()) {
+            while (resultSet.next()) {
                 UsuarioDBO usuario = new UsuarioDBO();
 
                 //Recuperar o id
-                usuario.setId(rset.getInt("id"));
+                usuario.setId(resultSet.getInt("id"));
 
                 //Recuperar o nome
-                usuario.setNome(rset.getString("nome"));
+                usuario.setNome(resultSet.getString("nome"));
 
                 //Recuperar o cep
-                usuario.setCep(rset.getString("cep"));
+                usuario.setCep(resultSet.getString("cep"));
 
                 //recuperar numeroCasa
-                usuario.setNumCasa(rset.getInt("numCasa"));
+                usuario.setNumCasa(resultSet.getInt("numCasa"));
 
                 //recuperar complemento
-                usuario.setComplemento(rset.getString("complemento"));
+                usuario.setComplemento(resultSet.getString("complemento"));
 
                 usuarios.add(usuario);
             }
@@ -145,16 +97,16 @@ public class UsuarioDAO {
             e.printStackTrace();
         } finally {
             try {
-                if (rset != null) {
-                    rset.close();
+                if (resultSet != null) {
+                    resultSet.close();
                 }
 
-                if (pstm != null) {
-                    pstm.close();
+                if (preparedStatement != null) {
+                    preparedStatement.close();
                 }
 
-                if (conn != null) {
-                    conn.close();
+                if (conexao != null) {
+                    conexao.close();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -163,45 +115,46 @@ public class UsuarioDAO {
         return usuarios;
     }
 
-    public void update(UsuarioDBO usuario) {
+    //Método para  atualizar dados de um usuario
+    public void updateÜser(UsuarioDBO usuario) {
 
-        String sql = "UPDATE usuarios SET nome = ?, cep = ?, numcasa = ?, complemento = ? " +
+        String sql = "UPDATE usuarios SET nome = ?, cep = ?, numCasa = ?, complemento = ? " +
                 "WHERE id = ?";
 
-        Connection conn = null;
-        PreparedStatement pstm = null;
+        Connection conexao = null;
+        PreparedStatement preparedStatement = null;
 
         try {
             //Criar conexão com o banco
-            conn = ConexaoBD.createConnecticonToMySQL();
+            conexao = ConexaoBD.createConnecticonToMySQL();
 
             //Criar classe para executar a query
 
-            pstm = (PreparedStatement) conn.prepareStatement(sql);
+            preparedStatement = conexao.prepareStatement(sql);
 
             //Adicionar os valores para atualizar
 
-            pstm.setString(1, usuario.getNome());
-            pstm.setString(2, usuario.getCep());
-            pstm.setInt(3, usuario.getNumCasa());
-            pstm.setString(4, usuario.getComplemento());
+            preparedStatement.setString(1, usuario.getNome());
+            preparedStatement.setString(2, usuario.getCep());
+            preparedStatement.setInt(3, usuario.getNumCasa());
+            preparedStatement.setString(4, usuario.getComplemento());
 
             //Qual o ID do registro que deseja atualizar?
-            pstm.setInt(5, usuario.getId());
+            preparedStatement.setInt(5, usuario.getId());
 
 
             //executar a query
-            pstm.execute();
+            preparedStatement.execute();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
-                if (pstm != null) {
-                    pstm.close();
+                if (preparedStatement != null) {
+                    preparedStatement.close();
                 }
 
-                if (conn != null) {
-                    conn.close();
+                if (conexao != null) {
+                    conexao.close();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -209,39 +162,100 @@ public class UsuarioDAO {
         }
     }
 
-    //metodo delete
-    public void deleteByID(int id) {
+    //Método para deletar usuarios
+    public void deleteUserByID(int id) {
 
         String sql = "DELETE FROM usuarios WHERE id = ?";
 
-        Connection conn = null;
+        Connection conexao = null;
 
-        PreparedStatement pstm = null;
+        PreparedStatement preparedStatement = null;
 
         try {
-            conn = ConexaoBD.createConnecticonToMySQL();
+            conexao = ConexaoBD.createConnecticonToMySQL();
 
-            pstm = (PreparedStatement) conn.prepareStatement(sql);
+            preparedStatement = conexao.prepareStatement(sql);
 
-            pstm.setInt(1, id);
+            preparedStatement.setInt(1, id);
 
-            pstm.execute();
+            preparedStatement.execute();
 
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
-                if (pstm != null) {
-                    pstm.close();
+                if (preparedStatement != null) {
+                    preparedStatement.close();
                 }
 
-                if (conn != null) {
-                    conn.close();
+                if (conexao != null) {
+                    conexao.close();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    //Retorna o primeiro registro da tabela onde o nome seja igual ao nome passado como parâmetro
+    static public UsuarioDBO getUser(String nome) {
+
+        String sql = "SELECT * FROM usuarios WHERE nome = ? ORDER BY id ASC LIMIT 1;";
+
+        UsuarioDBO usuario = new UsuarioDBO();
+
+        Connection conexao = null;
+
+        PreparedStatement preparedStatement = null;
+        //Classe que vai recuperar os dados do banco de dados
+        ResultSet resultSet = null;
+
+        try {
+            conexao = ConexaoBD.createConnecticonToMySQL();
+
+            preparedStatement = conexao.prepareStatement(sql);
+
+            preparedStatement.setString(1, nome);
+
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                //Recuperar o id
+                usuario.setId(resultSet.getInt("id"));
+
+                //Recuperar o nome
+                usuario.setNome(resultSet.getString("nome"));
+
+                //Recuperar o cep
+                usuario.setCep(resultSet.getString("cep"));
+
+                //recuperar numeroCasa
+                usuario.setNumCasa(resultSet.getInt("numCasa"));
+
+                //recuperar complemento
+                usuario.setComplemento(resultSet.getString("complemento"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return usuario;
     }
 }
 

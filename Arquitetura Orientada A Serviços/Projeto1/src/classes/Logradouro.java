@@ -4,6 +4,17 @@ public class Logradouro {
 
     private String logradouro;
 
+    private int numCasa;
+
+    public int getNumCasa() {
+        return numCasa;
+    }
+
+    public void setNumCasa(int numCasa) {
+        this.numCasa = numCasa;
+    }
+
+
     public String getLogradouro() {
         return this.logradouro;
     }
@@ -131,18 +142,21 @@ public class Logradouro {
     }
 
     public String toString() {
-        return "Logradouro: " +
+        return "Logradouro.: " +
                 this.logradouro +
+
+                "\nNumero.....: "+
+                this.numCasa +
+
                 "\nComplemento: " +
                 this.complemento +
+
                 "\nCidade.....: " +
                 this.cidade +
-                " / " +
-                this.cidade_info +
+
                 "\nEstado.....: " +
                 this.estado +
-                " / " +
-                this.estado_info +
+
                 "\nC.E.P......: " +
                 this.cep;
     }
@@ -209,6 +223,7 @@ public class Logradouro {
             throw new Exception("Modelo inexistente");
 
         this.logradouro = modelo.logradouro;
+        this.numCasa = modelo.numCasa;
         this.complemento = modelo.complemento;
         this.cidade = modelo.cidade;
         this.cidade_info = (InfoCidade) modelo.cidade_info.clone();
