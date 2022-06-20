@@ -1,0 +1,34 @@
+# Primeiramente, o que é o projeto mercúrio?
+	- O projeto que e e minha equipe do tcc estamos desenvolvendo é um aplicativo que irá auxiliar os professores
+        a corrigir as provas com maior facilidade e também os auxiliam a identificar onde o aluno está errando, entender melhor as 
+        suas dificuldades, e etc.
+        - Além disso o aplicativo pode gerar gráficos para os professores poderem analisar de maneira mais compreensiva, e também para poder 
+        comparar com outras salas e ver o desempenho da escola como um todo, assim ajudando nas reuniões de professores e pais.
+
+# Quais Ferramentas utilizamos neste projeto?
+	- Utilizamos 3 ferramentas, são elas: o Fluxograma; 5W1H, por que retiramos a pergunta do how much, quanto custa, pois ela não era 
+        necessária, já que o projeto não teria nenhum custo financeiro; e por fim o Ciclo PDCA.
+        - Vamos falar sobre o Por que implementamos cada ferramenta, como ela foi implementada e, no final, vamos abordar sobre as melhorias que elas 
+        apresentaram no nosso TCC.
+
+# A primeira ferramenta foi o fluxograma
+	- Escolhemos esta ferramenta para poder expressar melhor o escopo principal. No início do projeto, estávamos muito confusos sobre o que de fato 
+        iríamos fazer, como iríamos aplicar o aplicativo, quais seriam suas etapas. E o fluxograma ajudou muito nesta parte de planejar as etapas que a 
+        o projeto terá que realizar.
+
+# Como foi implementado o Fuxograma?
+	- O tipo do fluxograma foi o fluxograma funcional, nele é que irá ser mostrado todo o percurso da prova
+        - Para isso tivemos que passar pela fases de construção do fluxograma:
+        - Então, primeiro, a nós definimos qual seria o processo a ser esquematizado, que, na minha opinião, foi a parte mais difícil da construção do 
+        fluxograma. No nosso caso, pegamos uma perspectiva diferente do grupo do João Paulo, o Newton e o Victor. Nós escolhemos o fluxo que as provas
+        irão percorrer.
+        - Depois vem a etapa de definição do escopo do diagrama, que neste caso era a definição do processo principal e esclarecer suas etapas, ou seja,
+        definimos o inicio e fim do fluxo. Que vai desde a parte em que o professor cria a prova, até a parte que o professor recebe novamente a prova.
+        - Assim que terminamos esta parte passamos para a fase de definição das etapas, onde escolhemos os processos que seriam abordados, por exemplo,
+        os processos da parte do aluno que é o recebimento da prova, envio da prova, realização da prova.
+        - Depois disso restou a parte de montar de fato o fluxograma, nesta parte oraganizamos todas estas etapas dentro do fluxo. por exemplo,
+        aqueles processos ficaram na ordem agora, que é recebimento da prova, realização da prova e envio da prova.
+
+# Como ficou o fluxograma:
+
+# 5W1H
